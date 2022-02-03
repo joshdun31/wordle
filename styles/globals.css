@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,164 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ /* Global Styles & Colors */
+ :root {
+  --green: #6aaa64;
+  --darkendGreen: #538d4e;
+  --yellow: #c9b458;
+  --darkendYellow: #b59f3b;
+  --lightGray: #d8d8d8;
+  --gray: #86888a;
+  --darkGray: #939598;
+  --white: #fff;
+  --black: #212121;
+  /* Colorblind colors */
+  --orange: #f5793a;
+  --blue: #85c0f9;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  --header-height: 50px;
+  --keyboard-height: 200px;
+  --game-max-width: 500px;
+
+  /* My colors  */
+  --bg: #121213;
+  --text-color:#ddd;
+  --absent-color: #3a3a3c;
+}
+/* Light theme colors */
+:root {
+  --color-tone-1: #1a1a1b;
+  --color-tone-2: #787c7e;
+  --color-tone-3: #878a8c;
+  --color-tone-4: #d3d6da;
+  --color-tone-5: #edeff1;
+  --color-tone-6: #f6f7f8;
+  --color-tone-7: #ffffff;
+  --opacity-50: rgba(255, 255, 255, 0.5);
+}
+/* Dark Theme Colors */
+.nightmode {
+  --color-tone-1: #d7dadc;
+  --color-tone-2: #818384;
+  --color-tone-3: #565758;
+  --color-tone-4: #3a3a3c;
+  --color-tone-5: #272729;
+  --color-tone-6: #1a1a1b;
+  --color-tone-7: #121213;
+  --opacity-50: rgba(0, 0, 0, 0.5);
+}
+/* Constant colors and colors derived from theme */
+:root,
+.nightmode {
+  --color-background: var(--color-tone-7);
+}
+:root {
+  --color-present: var(--yellow);
+  --color-correct: var(--green);
+  --color-absent: var(--color-tone-2);
+  --tile-text-color: var(--color-tone-7);
+  --key-text-color: var(--color-tone-1);
+  --key-evaluated-text-color: var(--color-tone-7);
+  --key-bg: var(--color-tone-4);
+  --key-bg-present: var(--color-present);
+  --key-bg-correct: var(--color-correct);
+  --key-bg-absent: var(--color-absent);
+  --modal-content-bg: var(--color-tone-7);
+}
+.nightmode {
+  --color-present: var(--darkendYellow);
+  --color-correct: var(--darkendGreen);
+  --color-absent: var(--color-tone-4);
+  --tile-text-color: var(--color-tone-1);
+  --key-text-color: var(--color-tone-1);
+  --key-evaluated-text-color: var(--color-tone-1);
+  --key-bg: var(--color-tone-2);
+  --key-bg-present: var(--color-present);
+  --key-bg-correct: var(--color-correct);
+  --key-bg-absent: var(--color-absent);
+  --modal-content-bg: var(--color-tone-7);
+}
+.colorblind {
+  --color-correct: var(--orange);
+  --color-present: var(--blue);
+  --tile-text-color: var(--white);
+  --key-bg-present: var(--color-present);
+  --key-bg-correct: var(--color-correct);
+  --key-bg-absent: var(--color-absent);
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+  /* Prevent scrollbar appearing on page transition */
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: 'Rubik', sans-serif;
+  color: var(--text-color);
+
+}
+
+main{
+  background-color: var(--bg);
+  width: 100%;
+  height: 100vh;
+}
+.app-header{
+  text-align: center;
+  margin: 0 auto;
+  width: max-content;
+  border-bottom: 1px solid #3a3a3c;
+}
+.app-header h1{
+  letter-spacing: 8px;
+  font-size: 2.2rem;
+  padding: 14px 100px 8px; 
+  width: max-content;
+
+}
+
+.box-container{
+  width: max-content;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+.box-row{
+  display: flex;
+}
+.box{
+  /* padding: 10px 22px; */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  font-size: 1.8rem;
+  border: 1.5px solid #3a3a3c;
+  color: var(--text-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+}
+.box.absent{
+  background-color: var(--absent-color);
+}
+.box.present{
+  background-color: var(--darkendYellow);
+  border: 1.5px solid var(--darkendYellow);
+}
+.box.correct{
+  background-color: var(--darkendGreen);
+  border: 1.5px solid var(--darkendGreen);
 }
