@@ -2060,7 +2060,7 @@ export default function Home() {
         ) : null}
 
         {
-          gameState?.gameStatus!=="IN_PROGRESS"?
+          gameState && gameState?.gameStatus!=="IN_PROGRESS"?
             <div className="game-status-container">
               <div className="game-over">
                 {
